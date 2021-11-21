@@ -1,0 +1,303 @@
+@import "reset";
+
+// Colors
+@primaryColor: #4066A5;
+@darkColor: #131821;
+@grayColor: #6A707B;
+@accentColor: #E3E3E4;
+@lightColor: #F2F5FA;
+
+// Typography
+body {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1, h2, h3, h4 {
+  color: @darkColor;
+  font-style: normal;
+  font-weight: normal;
+}
+
+h1 {
+  font-family: Georgia;
+  font-size: 32px;
+  line-height: 44px;
+  text-transform: uppercase;
+  margin: 0 0 50px;
+}
+
+h2 {
+  //Check this
+  font-family: Georgia;
+  font-size: 32px;
+  line-height: 44px;
+  margin: 0 0 10px;
+}
+
+h3 {
+  //Check this
+  font-size: 24px;
+  line-height: 34px;
+  margin: 0 0 10px;
+}
+
+h4 {
+  font-family: Arial;
+  font-size: 16px;
+  line-height: 1.75;
+  opacity: 0.5;
+  margin: 0 0 30px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+a {
+  font-size: 16px;
+  line-height: 28px;
+  color: @darkColor;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.social-icon {
+  display: flex;
+  flex-direction: column;
+  width: 46px;
+  height: 46px;
+  border: 2px solid #E2E3E4;
+  box-sizing: border-box;
+  background: none;
+  border-radius: 100%;
+  text-align: center;
+  justify-content: center;
+  opacity: 1;
+
+  &:hover, &:focus {
+    i {
+      color: #fff;
+      opacity: 1;
+    }
+  }
+
+    i {
+      font-size: 16px;
+      color: @darkColor;
+      opacity: 0.3
+    }
+
+  &.facebook {
+    &:hover {
+      background: #4267B2;
+      border-color: #4267B2;
+    }
+    &:focus {
+      background: #2F4A80;
+      border-color: #2F4A80;
+    }
+  }
+
+  &.instagram {
+    &:hover {
+      background: #C13584;
+      border-color: #C13584;
+    }
+    &:focus {
+      background: #8F2762;
+      border-color: #8F2762;
+    }
+  }
+
+  &.twitter {
+    &:hover {
+      background: #1DA1F2;
+      border-color: #1DA1F2;
+    }
+    &:focus {
+      background: #177FBF;
+      border-color: #177FBF;
+    }
+  }
+
+  &.youtube {
+    &:hover {
+      background: #FF0000;
+      border-color: #FF0000;
+    }
+    &:focus {
+      background: #CC0000;
+      border-color: #CC0000;
+    }
+  }
+}
+
+// Page Content
+
+.pageContainer {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media all and (max-width: 767px) {
+    padding: 0;
+  }
+
+  .pageContent {
+    width: 680px;
+    height: 100vh;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F2F5FA 100%);
+    padding: 100px;
+    box-sizing: border-box;
+
+    @media all and (max-width: 767px) {
+        padding: 0;
+        width: 100%;
+        background-image: url(/images/image_summer.jpg);
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .content {
+      margin: 200px 0 0;
+
+      @media all and (max-width: 767px) {
+        background: #fff;
+        padding: 30px 20px;
+        margin: 100px 20px;
+      }
+    }
+
+  }
+  .pageBackground {
+    width: ~'calc(100% - 680px)';
+    background-image: url(/images/image_summer.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+// Header
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  @media all and (max-width: 767px) {
+    background: #fff;
+    padding: 10px 20px 16px;
+  }
+
+  .logo {
+
+  }
+
+  .menu {
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+.formWrapper {
+  padding: 0 0 50px;
+  border-bottom: 1px solid #E3E3E4;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  input {
+    width: 26px;
+    height: 26px;
+    border: 1px solid #E3E3E4;
+    margin-right: 15px;
+  }
+}
+
+.socialsWrapper {
+  text-align: center;
+  .socials {
+    display: inline-block;
+    margin: 50px auto;
+    li {
+      display: inline-block;
+      padding: 10px;
+    }
+  }
+}
+
+
+.formGroup {
+  position: relative;
+  left: -40px;
+  margin: 50px 0 54px;
+  box-sizing: border-box;
+  background: #fff;
+  width: ~'calc(100% + 100px + 83px + 40px)';
+
+  @media all and (max-width: 767px) {
+    width: 100%;
+    left: 0;
+  }
+
+  input {
+    height: 70px;
+    background: #fff;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid #E3E3E4;
+    width: 100%;
+    padding-left: 44px;
+    border-left: 4px solid @primaryColor;
+    box-sizing: border-box;
+
+    &:focus {
+      box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+      outline: inherit;
+    }
+
+    &:hover {
+      border-color: @primaryColor;
+      box-shadow: 0px 30px 40px rgba(19, 24, 33, 0.06);
+    }
+
+    @media all and (max-width: 767px) {
+      width: 100%;
+      padding-left: 20px;
+    }
+
+    &:hover + button svg path {
+      fill: @primaryColor;
+      opacity: 1;
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    background: #fff;
+    border: none;
+    width: 83px;
+    height: 68px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: 0.3s;
+
+    @media all and (max-width: 767px) {
+      width: 50px;
+    }
+  }
+}
